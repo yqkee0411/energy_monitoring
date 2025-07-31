@@ -9,6 +9,11 @@ It uses three PZEM-004T modules connected via I²C to an ESP8266 running Tasmota
 ## Motivation
 The reason for the creation of this project is that my mom have been complaning about the electricity being expensive since i move in and i have been frustrated about it since, as I have no idea what's using the electricity and how to cut the usage, so I decided on making myself a cheap enery monitoring system to know what's using the electricity. That is why i have gone the cheapest route i am comfortable with.
 
+- Electricity costs increased after I moved back home.
+- No visibility into which appliances were consuming the most power.
+- Wanted a **low-cost, DIY energy monitoring solution** for learning and optimization energy usage.
+
+
 **Key objectives:**
 - Real-time monitoring of power usage across three phase.
 - Cost calculation based on Malaysia’s electricity tariff.
