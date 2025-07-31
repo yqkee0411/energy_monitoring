@@ -74,16 +74,3 @@ So from the details of the phase 1 I can see that my fridge is constanly running
 
 ---
 
-
-
-
-## Example Cost Calculation
-
-```yaml
-# Example HA template sensor
-- platform: template
-  sensors:
-    daily_energy_cost:
-      friendly_name: "Daily Energy Cost"
-      unit_of_measurement: 'RM'
-      value_template: "{{ (states('sensor.daily_energy_kwh')|float * 0.218) | round(2) }}"
