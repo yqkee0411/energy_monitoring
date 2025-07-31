@@ -64,7 +64,7 @@ Overview            |  Details
 :-------------------------:|:-------------------------:
 <img width="550" height="577" alt="Screenshot 2025-07-31 at 12 41 21 PM" src="https://github.com/user-attachments/assets/4ebe25a0-4866-4e89-b6a1-ee96ceabe362" /> | <img width="550" height="470" alt="Screenshot 2025-07-31 at 12 41 40 PM" src="https://github.com/user-attachments/assets/21925114-8e71-47ad-a3fd-6bebe3970412" />
 
-So from the details of the phase 1 I can see that my fridge is constanly running with cyle of the compressor running and i am able to know roughly electricity used by it.
+- So from the details of the phase 1 I can see that my fridge is constanly running with cyle of the compressor running and i am able to know roughly electricity used by it.
 ---
 
 
