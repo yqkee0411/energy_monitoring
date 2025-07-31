@@ -37,7 +37,7 @@ ESP8266            |  PZEM-004T
 :-------------------------:|:-------------------------:
  <img width="516" height="443" alt="Screenshot 2025-07-31 at 12 54 14 PM" src="https://github.com/user-attachments/assets/3275f037-9959-4f23-868c-a8544d07bf31" />| <img width="516" height="443" alt="Screenshot 2025-07-31 at 12 56 27 PM" src="https://github.com/user-attachments/assets/054bf498-b332-4e61-bc4d-1f7170ad167e" />
 
--So i have gone for the ESP8266 with a 220v power supply and relay although i didn't need the relay but its the cheapest i can find at the time and it came with 220v power supply so no need external power supply, as for the PZEM-004T i have go for the Split core style CT so i don't need to messed around with disconnecting the cable, the cable was really stiff and i am not that comfortable with disconnect it and reconnect it without proper tools.
+So i have gone for the ESP8266 with a 220v power supply and relay although i didn't need the relay but its the cheapest i can find at the time and it came with 220v power supply so no need external power supply, as for the PZEM-004T i have go for the Split core style CT so i don't need to messed around with disconnecting the cable, the cable was really stiff and i am not that comfortable with disconnect it and reconnect it without proper tools.
 
 ### Software
 - Tasmota firmware on ESP8266
@@ -70,7 +70,8 @@ Overview            |  Details
 :-------------------------:|:-------------------------:
 <img width="550" height="577" alt="Screenshot 2025-07-31 at 12 41 21 PM" src="https://github.com/user-attachments/assets/4ebe25a0-4866-4e89-b6a1-ee96ceabe362" /> | <img width="550" height="470" alt="Screenshot 2025-07-31 at 12 41 40 PM" src="https://github.com/user-attachments/assets/21925114-8e71-47ad-a3fd-6bebe3970412" />
 
-- So from the details of the phase 1 I can see that my fridge is constanly running with cyle of the compressor running and i am able to know roughly electricity used by it.
+So from the details of the phase 1 I can see that my fridge is constanly running with cyle of the compressor running and i am able to know roughly electricity used by it.
+
 ---
 
 
