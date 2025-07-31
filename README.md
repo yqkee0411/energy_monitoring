@@ -33,6 +33,12 @@ It uses three PZEM-004T modules connected via I²C to an ESP8266 running Tasmota
 - I²C communication (custom addresses)
 - Wi-Fi network for MQTT data transfer
 
+ESP8266            |  PZEM-004T
+:-------------------------:|:-------------------------:
+ <img width="516" height="443" alt="Screenshot 2025-07-31 at 12 54 14 PM" src="https://github.com/user-attachments/assets/3275f037-9959-4f23-868c-a8544d07bf31" />| <img width="516" height="443" alt="Screenshot 2025-07-31 at 12 54 14 PM" src="https://github.com/user-attachments/assets/0a00ba46-87c6-4de8-bdf2-e7e85fcc2c55" />
+
+-So i have gone for the ESP8266 with a 220v power supply and relay although i didn't need the relay but its the cheapest i can find at the time and it came with 220v power supply so no need external power supply, as for the PZEM-004T i have go for the Split core style CT so i don't need to messed around with disconnecting the cable, the cable was really stiff and i am not that comfortable with disconnect it and reconnect it without proper tools.
+
 ### Software
 - Tasmota firmware on ESP8266
 - MQTT broker (e.g., Mosquitto)
