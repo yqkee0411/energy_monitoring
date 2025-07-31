@@ -60,9 +60,10 @@ It uses three PZEM-004T modules connected via I²C to an ESP8266 running Tasmota
 - Daily and monthly cost calculation
 - Customizable Lovelace cards
 
-Solarized dark             |  Solarized Ocean
+Overview            |  Details 
 :-------------------------:|:-------------------------:
 <img width="550" height="577" alt="Screenshot 2025-07-31 at 12 41 21 PM" src="https://github.com/user-attachments/assets/4ebe25a0-4866-4e89-b6a1-ee96ceabe362" /> | <img width="550" height="470" alt="Screenshot 2025-07-31 at 12 41 40 PM" src="https://github.com/user-attachments/assets/21925114-8e71-47ad-a3fd-6bebe3970412" />
+
 
 ---
 
