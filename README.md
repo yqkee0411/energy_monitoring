@@ -1,18 +1,14 @@
 # energy_monitoring
-An energy monitoring solution for small home
-
-# Home Energy Monitoring System with ESP8266 & Home Assistant
-
-A DIY IoT project to monitor and analyze household electricity consumption in real-time using **ESP8266**, **PZEM-004T energy meters**, and **Home Assistant**. This system provides detailed energy usage data, historical trends, and cost calculations based on local electricity tariffs.
+A DIY IoT project to monitor and analyze household electricity consumption in real-time using **ESP8266 (flash with Tasmota)**, **PZEM-004T energy meters**, and **Home Assistant**. This system provides detailed energy usage data, historical trends, and cost calculations based on local electricity tariffs.
 
 ---
 
 ## Overview
-
-I developed this project to track my home's power consumption across multiple circuits. It uses three PZEM-004T modules connected via I²C to an ESP8266 running Tasmota firmware. Data is published over MQTT to Home Assistant, where dashboards display real-time usage, daily costs, and historical trends.
+The reason for the creation of this project is that my mom have been complaning about the electricity being expensive since i move in and i have been frustrated about it since, as I have no idea what's using the electricity and how to cut the usage, so I decided on making myself a cheap enery monitoring system to know what's using the electricity. That is why i have gone the cheapest route i am comfortable with.
+It uses three PZEM-004T modules connected via I²C to an ESP8266 running Tasmota firmware. Data is published over MQTT to Home Assistant, where dashboards display real-time usage, daily costs, and historical trends. 
 
 **Key objectives:**
-- Real-time monitoring of power usage across three circuits.
+- Real-time monitoring of power usage across three phase.
 - Cost calculation based on Malaysia’s electricity tariff.
 - Historical data visualization for energy optimization.
 - Low-cost and modular hardware setup.
@@ -32,7 +28,7 @@ I developed this project to track my home's power consumption across multiple ci
 ## System Architecture
 
 ### Hardware
-- **ESP8266 (NodeMCU)**
+- **ESP8266 with 220v power supply built in**
 - **3× PZEM-004T v3 energy meters**
 - I²C communication (custom addresses)
 - Wi-Fi network for MQTT data transfer
@@ -47,10 +43,11 @@ I developed this project to track my home's power consumption across multiple ci
 
 ## Wiring & Setup
 
-1. Connect each PZEM-004T to the ESP8266 using I²C with unique addresses.
-2. Flash Tasmota firmware and configure I²C addresses in Tasmota console.
-3. Set up MQTT topics for each sensor.
-4. Integrate into Home Assistant via MQTT discovery or manual YAML configuration.
+1. Flash Tasmota firmware on the ESP8266
+2. Connect each PZEM-004T to the ESP8266 using I²C and configure it with unique addresses
+3. Connect all PZEM-004T to the ESP8266 and verify that all is working
+4. Set up MQTT topics for each sensor.
+5. Integrate into Home Assistant via MQTT.
 
 *(Insert wiring diagram and screenshots here)*
 
@@ -63,7 +60,8 @@ I developed this project to track my home's power consumption across multiple ci
 - Daily and monthly cost calculation
 - Customizable Lovelace cards
 
-*(Insert screenshots of dashboards here)*
+<img width="561" height="579" alt="Screenshot 2025-07-31 at 12 41 21 PM" src="https://github.com/user-attachments/assets/a4fb9e97-4614-444f-9205-9a7538d44ae7" />
+<img width="600" height="502" alt="Screenshot 2025-07-31 at 12 41 40 PM" src="https://github.com/user-attachments/assets/21925114-8e71-47ad-a3fd-6bebe3970412" />
 
 ---
 
