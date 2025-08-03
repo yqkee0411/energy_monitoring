@@ -51,7 +51,7 @@ It uses three PZEM-004T modules connected via I²C to an ESP8266 running Tasmota
 
 ESP8266            |  PZEM-004T
 :-------------------------:|:-------------------------:
- <img width="516" height="443" alt="Screenshot 2025-07-31 at 12 54 14 PM" src="https://github.com/user-attachments/assets/3275f037-9959-4f23-868c-a8544d07bf31" />| <img width="516" height="443" alt="Screenshot 2025-07-31 at 12 56 27 PM" src="https://github.com/user-attachments/assets/054bf498-b332-4e61-bc4d-1f7170ad167e" />
+ <img width="516" height="443" alt="ESP8266 Board" src="https://github.com/user-attachments/assets/3275f037-9959-4f23-868c-a8544d07bf31" />| <img width="516" height="443" alt="PZEM004T" src="https://github.com/user-attachments/assets/054bf498-b332-4e61-bc4d-1f7170ad167e" />
 
 So i have gone for the ESP8266 with a 220v power supply and relay although i didn't need the relay but its the cheapest i can find at the time and it came with 220v power supply so no need external power supply, as for the PZEM-004T i have go for the Split core style CT so i don't need to messed around with disconnecting the cable, the cable was really stiff and i am not that comfortable with disconnect it and reconnect it without proper tools.
 
@@ -72,8 +72,9 @@ So i have gone for the ESP8266 with a 220v power supply and relay although i did
 5. Integrate into Home Assistant via MQTT.
 
 *(Insert wiring diagram and screenshots here)*
-Wiring            
-:-------------------------:
+Picture            |  Description
+:-------------------------:|:-------------------------:
+<img width="516" height="443" alt="ct pic" src="https://github.com/user-attachments/assets/5f6a6435-21bb-4315-ae60-fdf6b0b4f80d" />| How the ct clamp is mounted
 
 ---
 
