@@ -72,6 +72,8 @@ So i have gone for the ESP8266 with a 220v power supply and relay although i did
 5. Integrate into Home Assistant via MQTT.
 
 *(Insert wiring diagram and screenshots here)*
+Wiring            
+:-------------------------:
 
 ---
 
