@@ -1,4 +1,4 @@
-# energy_monitoring
+# Energy Monitoring
 A DIY IoT project to monitor and analyze household electricity consumption in real-time using **ESP8266 (flash with Tasmota)**, **PZEM-004T energy meters**, and **Home Assistant**. This system provides detailed energy usage data, historical trends, and cost calculations based on local electricity tariffs.
 
 ---
