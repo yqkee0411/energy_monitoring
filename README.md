@@ -65,16 +65,56 @@ So i have gone for the ESP8266 with a 220v power supply and relay although i did
 
 ## Wiring & Setup
 
+### Before installation
+
 1. Flash Tasmota firmware on the ESP8266
 2. Connect each PZEM-004T to the ESP8266 using I²C and configure it with unique addresses
 3. Connect all PZEM-004T to the ESP8266 and verify that all is working
-4. Set up MQTT topics for each sensor.
-5. Integrate into Home Assistant via MQTT.
+4. Set up MQTT.
+5. Integrate into Home Assistant via MQTT and ensure all is working.
 
-*(Insert wiring diagram and screenshots here)*
+<!--
+**Installation**
+As in my scenario there is 3 phase so each live / phase will need to be connect to each PZEM-004T
+1. Ensure the breaker is turned off for the intended connect point (or you can turn main breaker off, but you will lose all electricity)
+2. Connect each live / phase to each PZEM-004T and one of the live / phase to esp32 (what ever phase you like as it is just for powering)
+3. Connect all neutral of the PZEM-004T to the neutral and also the neutral of the esp
+4. Connect all CT clamp to the correct phase **(crucial as if wrong wire is clamp, reading will be incorrect)**
+   -->
+### Installation (3-Phase Setup)
+
+> **⚠️ Safety Warning**  
+> Working with mains electricity can be dangerous. Ensure the breaker is switched off before wiring. If unsure, turn off the **main breaker** (note: this cuts power to the entire house).
+
+This setup uses three PZEM-004T modules — one for each phase (L1, L2, L3). One phase also powers the ESP8266.
+
+---
+
+#### Steps
+
+1. **Power Off**
+   - Turn off the breaker for the specific connection point.  
+   - Optionally, turn off the main breaker for full isolation.
+
+2. **Connect Live Wires**
+   - Connect each live phase (L1, L2, L3) to the corresponding PZEM-004T input.  
+   - Choose **any one phase** to also power the ESP8266 (only one is required for power).
+
+3. **Connect Neutral Wires**
+   - Connect all PZEM-004T neutrals together and to the house neutral.  
+   - Connect the ESP8266 neutral to this common neutral as well.
+
+4. **Attach CT Clamps**
+   - Clip each CT clamp around the **matching phase wire** (L1 → PZEM1, L2 → PZEM2, L3 → PZEM3).  
+   - **Important:** Incorrect pairing will result in inaccurate readings.
+
+<!-- *(Insert wiring diagram and screenshots here)* -->
+
 Picture            |  Description
 :-------------------------:|:-------------------------:
-<img width="516" height="443" alt="ct pic" src="https://github.com/user-attachments/assets/5f6a6435-21bb-4315-ae60-fdf6b0b4f80d" />| How the ct clamp is mounted
+<img width="780" height="238" alt="image" src="https://github.com/user-attachments/assets/d72e1b51-2cc0-4e31-88a3-3a0b0b5d7ab5" /> | PZEM-004T wiring diagram
+<img width="516" height="443" alt="ct pic" src="https://github.com/user-attachments/assets/5f6a6435-21bb-4315-ae60-fdf6b0b4f80d" /> | How the ct clamp is mounted
+
 
 ---
 
