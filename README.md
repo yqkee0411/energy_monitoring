@@ -115,10 +115,18 @@ Picture            |  Description
 <img width="780" height="238" alt="image" src="https://github.com/user-attachments/assets/d72e1b51-2cc0-4e31-88a3-3a0b0b5d7ab5" /> | PZEM-004T wiring diagram
 <img width="516" height="443" alt="ct pic" src="https://github.com/user-attachments/assets/5f6a6435-21bb-4315-ae60-fdf6b0b4f80d" /> | How the ct clamp is mounted
 
-
 ---
 
-## Home Assistant Dashboard
+## How It Works
+
+
+## Dashboard Integration
+<!--
+- **Home Assistant:** Lovelace card to open/close gate and view status.
+- **Apple HomeKit:** Gate appears as an accessory in the Home app.
+
+*(Insert screenshots of dashboard and HomeKit integration here)*
+-->
 
 - Real-time power usage (per circuit & total)
 - Historical energy consumption trends
@@ -132,4 +140,32 @@ Overview            |  Details
 So from the details of the phase 1 I can see that my fridge is constanly running with cyle of the compressor running and i am able to know roughly electricity used by it.
 
 ---
+
+## Repository Contents
+
+- Wiring diagrams
+- Tasmota configuration details
+- Home Assistant YAML snippets
+- Dashboard screenshots
+
+---
+
+<!--
+---
+
+## Skills Demonstrated
+
+- ESP8266 hardware integration
+- Tasmota relay configuration and GPIO input sensing
+- MQTT and Home Assistant automation
+- Retrofit design preserving legacy functionality
+- HomeKit integration via Home Assistant
+
+---
+-->
+
+## License
+
+Open-source under MIT License.
+
 
