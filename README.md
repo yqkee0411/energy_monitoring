@@ -119,6 +119,7 @@ Picture            |  Description
 
 ## How It Works
 
+---
 
 ## Dashboard Integration
 <!--
@@ -141,6 +142,45 @@ So from the details of the phase 1 I can see that my fridge is constanly running
 
 ---
 
+## Sample YAML
+
+```
+//If you already have other sensor in config, no need to add in the "template:" just continue 
+template:
+    - sensors:
+        energy_total_template:
+          friendly_name: 'Total Energy Template'
+          entity_id:
+            - sensor.tasmota_energy_energy_total_0
+            - sensor.tasmota_energy_energy_total_1
+            - sensor.tasmota_energy_energy_total_2
+          value_template: "{{ (states('sensor.tasmota_energy_energy_total_0')|float + states('sensor.tasmota_energy_energy_total_1')|float + states('sensor.tasmota_energy_energy_total_2')|float)|round(3) }}"
+          unit_of_measurement: "kWh"
+          
+    - sensors:
+        energy_today_total_template:
+          friendly_name: 'Today Total Energy Template'
+          entity_id:
+            - sensor.tasmota_energy_energy_today_0
+            - sensor.tasmota_energy_energy_today_1
+            - sensor.tasmota_energy_energy_today_2
+          value_template: "{{ (states('sensor.tasmota_energy_energy_today_0')|float + states('sensor.tasmota_energy_energy_today_1')|float + states('sensor.tasmota_energy_energy_today_2')|float)|round(3) }}"
+          unit_of_measurement: "kWh"
+          
+    - sensors:
+        power_total_template:
+          friendly_name: 'Total Power Template'
+          entity_id:
+            - sensor.tasmota_energy_energy_power_0
+            - sensor.tasmota_energy_energy_power_1
+            - sensor.tasmota_energy_energy_power_2
+          value_template: "{{ (states('sensor.tasmota_energy_energy_power_0')|float + states('sensor.tasmota_energy_energy_power_1')|float + states('sensor.tasmota_energy_energy_power_2')|float)|round(1) }}"
+          unit_of_measurement: "W"
+
+
+```
+<!--
+
 ## Repository Contents
 
 - Wiring diagrams
@@ -150,7 +190,6 @@ So from the details of the phase 1 I can see that my fridge is constanly running
 
 ---
 
-<!--
 ---
 
 ## Skills Demonstrated
