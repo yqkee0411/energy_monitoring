@@ -2,7 +2,7 @@
 A DIY IoT project to monitor and analyze household electricity consumption in real-time using **ESP8266 (flash with Tasmota)**, **PZEM-004T energy meters**, and **Home Assistant**. This system provides detailed energy usage data, historical trends, and cost calculations based on local electricity tariffs.
 
 ---
-## Acheivement
+## Achievement
 
 - Monitors **3 independent power circuits** in real-time using ESP8266 + PZEM-004T.
 - Integrated with **Home Assistant dashboards** for historical trends and cost analysis.
@@ -13,7 +13,7 @@ A DIY IoT project to monitor and analyze household electricity consumption in re
 ---
 
 ## Overview
-It uses three PZEM-004T modules connected via I²C to an ESP8266 running Tasmota firmware. Data is published over MQTT to Home Assistant, where dashboards display real-time usage, daily costs, and historical trends. 
+It uses three PZEM-004T modules connected via UART to an ESP8266 running Tasmota firmware. Data is published over MQTT to Home Assistant, where dashboards display real-time usage, daily costs, and historical trends. 
 
 ## Motivation
 <!-- The reason for the creation of this project is that my mom have been complaning about the electricity being expensive since i move in and i have been frustrated about it since, as I have no idea what's using the electricity and how to cut the usage, so I decided on making myself a cheap enery monitoring system to know what's using the electricity. That is why i have gone the cheapest route i am comfortable with. -->
@@ -34,7 +34,7 @@ It uses three PZEM-004T modules connected via I²C to an ESP8266 running Tasmota
 ## Features
 
 - **Real-time power monitoring:** Voltage, current, power, energy, and frequency.
-- **Multi-sensor setup:** Three PZEM-004T meters connected via I²C with individual addresses.
+- **Multi-sensor setup:** Three PZEM-004T meters connected via UART with individual addresses.
 - **Home Assistant dashboard:** Live usage charts and daily/weekly/monthly trends.
 - **Cost calculation:** Automatic cost estimation based on custom tariff rates.
 - **Open-source stack:** Tasmota, MQTT, and Home Assistant integration.
@@ -46,7 +46,7 @@ It uses three PZEM-004T modules connected via I²C to an ESP8266 running Tasmota
 ### Hardware
 - **ESP8266 with 220v power supply built in**
 - **3× PZEM-004T v3 energy meters**
-- I²C communication (custom addresses)
+- UART communication (custom addresses)
 - Wi-Fi network for MQTT data transfer
 
 ESP8266            |  PZEM-004T
@@ -68,7 +68,7 @@ So i have gone for the ESP8266 with a 220v power supply and relay although i did
 ### Before installation
 
 1. Flash Tasmota firmware on the ESP8266
-2. Connect each PZEM-004T to the ESP8266 using I²C and configure it with unique addresses
+2. Connect each PZEM-004T to the ESP8266 using UART and configure it with unique addresses
 3. Connect all PZEM-004T to the ESP8266 and verify that all is working
 4. Set up MQTT.
 5. Integrate into Home Assistant via MQTT and ensure all is working.
@@ -118,6 +118,26 @@ Picture            |  Description
 ---
 
 ## How It Works
+This system continuously monitors electrical parameters (voltage, current, power, energy) from **three independent circuits** using **PZEM-004T energy meters**. The data is processed and then sent to Home Assistant.
+
+1. **Measurement**  
+   Each PZEM-004T module measures voltage and current for a single phase:
+   - Voltage is measured by wiring the phase and neutral directly to the PZEM input.
+   - Current is measured using a split-core CT clamp placed around the same phase conductor, so no cutting or disconnection of the wire is required.
+
+3. **Data Collection (ESP8266 with Tasmota)**  
+   - Tasmota reads data from the three PZEM-004T modules via UART (using individually addressed connections).  
+   - The ESP8266 publishes sensor readings to an MQTT broker on the local network.
+
+4. **Data Aggregation (MQTT + Home Assistant)**  
+   - Home Assistant subscribes to the MQTT topics exposed by Tasmota.  
+   - Template sensors combine the three individual readings to calculate **total power** and **total energy usage**.  
+
+5. **Visualization & Automation**  
+   - Data is displayed on **Lovelace dashboards** for real-time and historical analysis.  
+   - Home Assistant automations use thresholds (e.g., high consumption alerts, cost estimates) for notifications or energy-saving actions.
+
+
 
 ---
 
@@ -138,7 +158,7 @@ Overview            |  Details
 :-------------------------:|:-------------------------:
 <img width="550" height="577" alt="Screenshot 2025-07-31 at 12 41 21 PM" src="https://github.com/user-attachments/assets/4ebe25a0-4866-4e89-b6a1-ee96ceabe362" /> | <img width="550" height="470" alt="Screenshot 2025-07-31 at 12 41 40 PM" src="https://github.com/user-attachments/assets/21925114-8e71-47ad-a3fd-6bebe3970412" />
 
-So from the details of the phase 1 I can see that my fridge is constanly running with cyle of the compressor running and i am able to know roughly electricity used by it.
+So from the details of the phase 1 I can see that my fridge is constantly running with cycle of the compressor running and i am able to know roughly electricity used by it.
 
 ---
 
