@@ -22,20 +22,20 @@ It uses three PZEM-004T modules connected via UART to an ESP8266 running Tasmota
 - No visibility into which appliances were consuming the most power.
 - Wanted a **low-cost, DIY energy monitoring solution** for learning and optimization energy usage.
 
-
+<!--
 **Key objectives:**
 - Real-time monitoring of power usage across three phase.
 - Cost calculation based on Malaysia’s electricity tariff.
 - Historical data visualization for energy optimization.
 - Low-cost and modular hardware setup.
-
+-->
 ---
 
 ## Features
 
 - **Real-time power monitoring:** Voltage, current, power, energy, and frequency.
 - **Multi-sensor setup:** Three PZEM-004T meters connected via UART with individual addresses.
-- **Home Assistant dashboard:** Live usage charts and daily/weekly/monthly trends.
+- **Home Assistant dashboard:** Live usage charts, daily/weekly/monthly trends and history data.
 - **Cost calculation:** Automatic cost estimation based on custom tariff rates.
 - **Open-source stack:** Tasmota, MQTT, and Home Assistant integration.
 
