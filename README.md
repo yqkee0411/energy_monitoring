@@ -48,12 +48,13 @@ It uses three PZEM-004T modules connected via UART to an ESP8266 running Tasmota
 - **3× PZEM-004T v3 energy meters**
 - UART communication (custom addresses)
 - Wi-Fi network for MQTT data transfer
+- Wire and Current Transformer, Each PZEM-004T requires direct wiring to phase and neutral for voltage measurement and uses a CT clamp (split or non-split) for current measurement on the same phase conductor. 
 
 ESP8266            |  PZEM-004T
 :-------------------------:|:-------------------------:
  <img width="516" height="443" alt="ESP8266 Board" src="https://github.com/user-attachments/assets/3275f037-9959-4f23-868c-a8544d07bf31" />| <img width="516" height="443" alt="PZEM004T" src="https://github.com/user-attachments/assets/054bf498-b332-4e61-bc4d-1f7170ad167e" />
 
-So i have gone for the ESP8266 with a 220v power supply and relay although i didn't need the relay but its the cheapest i can find at the time and it came with 220v power supply so no need external power supply, as for the PZEM-004T i have go for the Split core style CT so i don't need to messed around with disconnecting the cable, the cable was really stiff and i am not that comfortable with disconnect it and reconnect it without proper tools.
+So i have gone for the ESP8266 with a 220v power supply and relay although i didn't need the relay but its the cheapest i could find at the time and it came with 220v power supply so no need external power supply, as for the PZEM-004T i have go for the Split core style CT so i don't need to messed with disconnecting the cable, the cable was really stiff and i am not that comfortable with disconnect it and reconnect it without proper tools.
 
 ### Software
 - Tasmota firmware on ESP8266
@@ -125,15 +126,15 @@ This system continuously monitors electrical parameters (voltage, current, power
    - Voltage is measured by wiring the phase and neutral directly to the PZEM input.
    - Current is measured using a split-core CT clamp placed around the same phase conductor, so no cutting or disconnection of the wire is required.
 
-3. **Data Collection (ESP8266 with Tasmota)**  
+2. **Data Collection (ESP8266 with Tasmota)**  
    - Tasmota reads data from the three PZEM-004T modules via UART (using individually addressed connections).  
    - The ESP8266 publishes sensor readings to an MQTT broker on the local network.
 
-4. **Data Aggregation (MQTT + Home Assistant)**  
+3. **Data Aggregation (MQTT + Home Assistant)**  
    - Home Assistant subscribes to the MQTT topics exposed by Tasmota.  
    - Template sensors combine the three individual readings to calculate **total power** and **total energy usage**.  
 
-5. **Visualization & Automation**  
+4. **Visualization & Automation**  
    - Data is displayed on **Lovelace dashboards** for real-time and historical analysis.  
    - Home Assistant automations use thresholds (e.g., high consumption alerts, cost estimates) for notifications or energy-saving actions.
 
@@ -158,15 +159,15 @@ Overview            |  Details
 :-------------------------:|:-------------------------:
 <img width="550" height="577" alt="Screenshot 2025-07-31 at 12 41 21 PM" src="https://github.com/user-attachments/assets/4ebe25a0-4866-4e89-b6a1-ee96ceabe362" /> | <img width="550" height="470" alt="Screenshot 2025-07-31 at 12 41 40 PM" src="https://github.com/user-attachments/assets/21925114-8e71-47ad-a3fd-6bebe3970412" />
 
-So from the details of the phase 1 I can see that my fridge is constantly running with cycle of the compressor running and i am able to know roughly electricity used by it.
+So from the details of the phase 1 I can see that my fridge is constantly running with cycle of the compressor and i am able to know roughly electricity used by it.
 
 ---
 
 ## Sample YAML
-The YAML is setup for sensor **Total energy**, **Total energy (today)** and **Total Power** for a setting up a utility meter in Home Assistant, needed on three phase power in, not require if it is single phase
+The YAML is setup for sensor **Total energy**, **Total energy (today)** and **Total Power** for a setting up a utility meter in Home Assistant, needed on three phase setup, not require for single phase
 
 ```
-//If you already have other sensor in config, no need to add in the "template:" just continue 
+#If you already have other sensor in config, no need to add in the "template:" just continue 
 template:
     - sensors:
         energy_total_template:
