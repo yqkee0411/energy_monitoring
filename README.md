@@ -143,6 +143,7 @@ So from the details of the phase 1 I can see that my fridge is constanly running
 ---
 
 ## Sample YAML
+The YAML is setup for sensor **Total energy**, **Total energy (today)** and **Total Power** for a setting up a utility meter in Home Assistant, needed on three phase power in, not require if it is single phase
 
 ```
 //If you already have other sensor in config, no need to add in the "template:" just continue 
